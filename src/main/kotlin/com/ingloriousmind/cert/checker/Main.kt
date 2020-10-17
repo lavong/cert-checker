@@ -12,7 +12,8 @@ import com.github.ajalt.clikt.parameters.types.int
 fun main(vararg args: String) {
 	NoOpCliktCommand(name = "cert-checker")
 		.subcommands(
-			HelloCommand()
+			HelloCommand(),
+			PublicKeyHashCommand(),
 		)
 		.main(args)
 }
@@ -22,12 +23,12 @@ private class HelloCommand : CliktCommand(
 	help = "Prints hello world"
 ) {
 	val count: Int by option(
-		names = *arrayOf("--count", "-c"),
+		names = arrayOf("--count", "-c"),
 		help = "Number of greetings",
 	).int().default(1)
 
 	val name: String by option(
-		names = *arrayOf("--name", "-n"),
+		names = arrayOf("--name", "-n"),
 		help = "The person to greet",
 	).default("World")
 
