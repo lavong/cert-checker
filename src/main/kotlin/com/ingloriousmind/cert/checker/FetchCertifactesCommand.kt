@@ -21,9 +21,9 @@ import java.security.cert.X509Certificate
 import javax.net.ssl.SSLPeerUnverifiedException
 import kotlin.system.exitProcess
 
-class PublicKeyHashCommand : CliktCommand(
+class FetchCertifactesCommand : CliktCommand(
 	name = "certs",
-	help = "Prints public key hash"
+	help = "Prints certificates"
 ) {
 	private val url: String by argument(name = "url", help = "The url to fetch")
 		.convert { if (it.startsWith("https://")) it else "https://$it" }
@@ -31,6 +31,7 @@ class PublicKeyHashCommand : CliktCommand(
 	private val verbose by option("-v", "--verbose", help = "Display verbose information").flag(default = false)
 
 	private val proxyHost by option("-proxy", "--proxy-host", help = "Proxy hostname to use")
+
 	private val proxyPort by option("-port", "--proxy-port", help = "Proxy port to use").int().default(8080)
 
 	override fun run() {
