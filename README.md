@@ -12,7 +12,7 @@ peer certificate chain:
   sha256/iie1VXtL7HzAMF+/PVPR9xzT80kQxdZeJ+zduCB3uj0= | CN=GlobalSign,O=GlobalSign,OU=GlobalSign Root CA - R2
 ```
 
-Use `--verbose` to print the whole certificates:
+Use `--verbose` to print whole certificates:
 
 ```
 $ cert-checker certs google.com --verbose
