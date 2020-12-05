@@ -1,5 +1,28 @@
 # cert-checker
 
+Script to conviniently print public key hashes (and more) of certificate chains for given domain. For example:
+
+```
+$ cert-checker certs google.com
+connecting to 'https://google.com'...
+
+peer certificate chain:
+  sha256/Qj5o5pUF1IVOU22irQ33ag3Ft/d6doqEm/VgbSpkjrM= | CN=www.google.com,O=Google LLC,L=Mountain View,ST=California,C=US
+  sha256/YZPgTZ+woNCCCIW3LH2CxQeLzB/1m42QcCTBSdgayjs= | CN=GTS CA 1O1,O=Google Trust Services,C=US
+  sha256/iie1VXtL7HzAMF+/PVPR9xzT80kQxdZeJ+zduCB3uj0= | CN=GlobalSign,O=GlobalSign,OU=GlobalSign Root CA - R2
+```
+
+Use `--verbose` to print the whole certificates:
+
+```
+$ cert-checker certs google.com --verbose
+```
+
+Use `--proxy-host` and `--proxy-host` if you are sitting behind a proxy:
+```
+$ cert-checker certs --proxy-host localhost --proxy-port 8080 google.com
+```
+
 ## Install
 
 ### MacOS
