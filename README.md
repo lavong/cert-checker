@@ -1,6 +1,6 @@
 # cert-checker
 
-Script to conviniently print public key hashes (and more) of certificate chains for given domain. For example:
+Script to conveniently print public key hashes (and more) of certificate chains for given a domain. For example:
 
 ```
 $ cert-checker certs google.com
