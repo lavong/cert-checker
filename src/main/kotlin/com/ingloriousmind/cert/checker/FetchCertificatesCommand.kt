@@ -3,17 +3,11 @@ package com.ingloriousmind.cert.checker
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.arguments.convert
-import com.github.ajalt.clikt.parameters.arguments.default
-import com.github.ajalt.clikt.parameters.arguments.validate
 import com.github.ajalt.clikt.parameters.options.default
 import com.github.ajalt.clikt.parameters.options.flag
 import com.github.ajalt.clikt.parameters.options.option
 import com.github.ajalt.clikt.parameters.types.int
 import okhttp3.*
-import okhttp3.HttpUrl.Companion.toHttpUrl
-import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
-import okhttp3.logging.HttpLoggingInterceptor
-import okio.ByteString.Companion.toByteString
 import java.io.IOException
 import java.net.InetSocketAddress
 import java.net.Proxy
@@ -21,7 +15,7 @@ import java.security.cert.X509Certificate
 import javax.net.ssl.SSLPeerUnverifiedException
 import kotlin.system.exitProcess
 
-class FetchCertifactesCommand : CliktCommand(
+class FetchCertificatesCommand : CliktCommand(
 	name = "certs",
 	help = "Prints certificates"
 ) {

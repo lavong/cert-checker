@@ -9,7 +9,7 @@ fun main(vararg args: String) {
 	NoOpCliktCommand(name = "cert-checker")
 		.subcommands(
 			HelloCommand(),
-			FetchCertifactesCommand(),
+			FetchCertificatesCommand(),
 		)
 		.main(args)
 }
