@@ -3,8 +3,8 @@ buildscript {
 		mavenCentral()
 	}
 	dependencies {
-		classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30'
-		classpath 'org.jetbrains.kotlin:kotlin-serialization:1.5.30'
+		classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10'
+		classpath 'org.jetbrains.kotlin:kotlin-serialization:1.6.10'
 	}
 }
 
@@ -15,38 +15,29 @@ mainClassName = 'com.ingloriousmind.cert.checker.Main'
 
 dependencies {
 	implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
-	implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
-	implementation 'com.github.ajalt.clikt:clikt:3.2.0'
-	implementation 'com.squareup.okhttp3:okhttp:4.9.1'
-	implementation 'com.squareup.okhttp3:logging-interceptor:4.9.1'
+	implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
+	implementation 'com.github.ajalt.clikt:clikt:3.4.0'
+	implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+	implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
 }
 
 repositories {
 	mavenCentral()
-	jcenter()
 }
 
 tasks.named("distTar").configure { task ->
 	task.enabled = false
 }
 tasks.named("assemble").configure { task ->
-	task.dependsOn(tasks.getByName("installDist"))
+	task.dependsOn(tasks.named("installDist"))
 }
 
 tasks.withType(org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompile).configureEach { task ->
 	task.kotlinOptions {
 		jvmTarget = '1.8'
-		languageVersion = '1.4'
 		freeCompilerArgs += [
 			'-progressive',
-			'-XXLanguage:+NewInference',
-			'-Xinline-classes',
-			'-Xopt-in=kotlin.ExperimentalStdlibApi',
-			'-Xopt-in=kotlin.ExperimentalUnsignedTypes',
-			'-Xopt-in=kotlin.time.ExperimentalTime',
 			'-Xopt-in=kotlinx.coroutines.ExperimentalCoroutinesApi',
-			'-Xopt-in=kotlinx.coroutines.ObsoleteCoroutinesApi',
-			'-Xopt-in=kotlinx.serialization.UnstableDefault',
 		]
 	}
 }
