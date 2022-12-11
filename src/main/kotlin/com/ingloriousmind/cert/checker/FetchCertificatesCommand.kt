@@ -44,7 +44,11 @@ class FetchCertificatesCommand : CliktCommand(
 						?.onEach { echo(it) }
 						?: echo("none")
 				} else {
-					echo(message = e.message, err = true)
+					if (verbose) {
+						e.printStackTrace()
+					} else {
+						echo(message = e.message, err = true)
+					}
 				}
 
 				exitProcess(1)
