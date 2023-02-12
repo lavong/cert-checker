@@ -3,8 +3,8 @@ buildscript {
 		mavenCentral()
 	}
 	dependencies {
-		classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.21'
-		classpath 'org.jetbrains.kotlin:kotlin-serialization:1.7.21'
+		classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.10'
+		classpath 'org.jetbrains.kotlin:kotlin-serialization:1.8.10'
 	}
 }
 
@@ -16,7 +16,7 @@ mainClassName = 'com.ingloriousmind.cert.checker.Main'
 dependencies {
 	implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
 	implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
-	implementation 'com.github.ajalt.clikt:clikt:3.5.0'
+	implementation 'com.github.ajalt.clikt:clikt:3.5.1'
 	implementation 'com.squareup.okhttp3:okhttp:4.10.0'
 	implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0'
 }
