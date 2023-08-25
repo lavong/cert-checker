@@ -18,7 +18,7 @@ Use `--verbose` to print whole certificates:
 $ cert-checker certs google.com --verbose
 ```
 
-Use `--proxy-host` and `--proxy-host` if you are sitting behind a proxy:
+Use `--proxy-host` and `--proxy-port` if you are sitting behind a proxy:
 ```
 $ cert-checker certs --proxy-host localhost --proxy-port 8080 google.com
 ```
