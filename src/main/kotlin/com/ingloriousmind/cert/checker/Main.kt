@@ -13,6 +13,6 @@ fun main(vararg args: String) {
 			HelloCommand(),
 			FetchCertificatesCommand(),
 		)
-		.versionOption("1.1.0")
+		.versionOption("1.2.0")
 		.main(args)
 }
