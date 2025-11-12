@@ -11,7 +11,9 @@ buildscript {
 apply plugin: 'org.jetbrains.kotlin.jvm'
 apply plugin: 'application'
 
-mainClassName = 'com.ingloriousmind.cert.checker.Main'
+application {
+	mainClass = 'com.ingloriousmind.cert.checker.Main'
+}
 
 dependencies {
 	implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
